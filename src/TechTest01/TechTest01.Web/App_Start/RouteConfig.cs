@@ -19,7 +19,15 @@ namespace TechTest01.Web
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                name: "Products",
+                url: "products",
+                defaults: new { controller = "Products", action = "Index" }
+            );
+
             
+
+
         }
     }
 }

@@ -1,7 +1,24 @@
-﻿
+﻿@model IEnumerable<TechTest01.Domain.Catalog.Product>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <a href="/products/Details/@item.Slug">
+                    <img src="~/Content/images/@item.ImageUrl" class="card-img-top" alt="@item.Name">
+                </a>
+                
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Description</p>
+                    <a href="/products/Details/@item.Slug" class="btn btn-primary">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
 
